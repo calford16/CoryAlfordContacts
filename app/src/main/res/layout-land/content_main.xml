@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -14,9 +14,8 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout">
 
         <EditText
@@ -50,8 +49,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:layout_marginRight="60dp">
+            android:orientation="horizontal">
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -78,8 +76,8 @@
         android:text="Save"
         android:id="@+id/button"
         android:layout_below="@+id/linearLayout"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,10 +87,10 @@
         android:id="@+id/textView"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:layout_below="@+id/button"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_marginTop="34dp" />
+        android:layout_alignTop="@+id/linearLayout"
+        android:layout_toLeftOf="@+id/textViewName"
+        android:layout_toStartOf="@+id/textViewName"
+        android:paddingRight="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -100,12 +98,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="E-mail:"
         android:id="@+id/textView2"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="19dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:layout_below="@+id/textView"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:paddingRight="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -113,12 +112,12 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Phone:"
         android:id="@+id/textView3"
-        android:layout_marginTop="27dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/textView2"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_alignEnd="@+id/textView4" />
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -126,57 +125,59 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Phone Type:"
         android:id="@+id/textView4"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:textColor="@android:color/black"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/textViewName"
-        android:layout_above="@+id/textView2"
-        android:layout_alignLeft="@+id/textViewEmail"
-        android:layout_alignStart="@+id/textViewEmail"
         android:background="@android:color/holo_blue_light"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:width="200dp"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/textViewEmail"
-        android:layout_above="@+id/textView3"
-        android:layout_alignLeft="@+id/textViewPhone"
-        android:layout_alignStart="@+id/textViewPhone"
         android:background="@android:color/holo_blue_light"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:width="200dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/textViewPhone"
-        android:layout_above="@+id/textView4"
-        android:layout_alignLeft="@+id/textViewType"
-        android:layout_alignStart="@+id/textViewType"
         android:background="@android:color/holo_blue_light"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:width="200dp"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/textViewType"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4"
-        android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp"
         android:background="@android:color/holo_blue_light"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:width="200dp"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignLeft="@+id/textViewPhone"
+        android:layout_alignStart="@+id/textViewPhone" />
 
 </RelativeLayout>
