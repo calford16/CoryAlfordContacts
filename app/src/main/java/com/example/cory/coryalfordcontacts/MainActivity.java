@@ -5,9 +5,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,14 +24,34 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        View.OnClickListener myOnClickListener=
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        TextView textViewName = (TextView) findViewById(R.id.textViewName);
+                        TextView textViewEmail = (TextView) findViewById(R.id.textViewPhone);
+                        TextView textViewPhone = (TextView) findViewById(R.id.textViewEmail);
+                        TextView textViewType = (TextView) findViewById(R.id.textViewType);
+
+                        EditText editTextName = (EditText) findViewById(R.id.editTextName);
+                        EditText editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+                        EditText editTextPhone = (EditText) findViewById(R.id.editTextPhone);
+                        RadioButton rbLand = (RadioButton) findViewById(R.id.rbLand);
+                        RadioButton rbCell = (RadioButton) findViewById(R.id.rbCell);
+
+                        textViewName.setText(editTextName.getText());
+                        textViewEmail.setText(editTextEmail.getText());
+                        textViewPhone.setText(editTextPhone.getText());
+                        if (rbLand.isChecked()) {
+                            textViewType.setText(rbLand.getText());
+                        }
+                        if (rbCell.isChecked()) {
+                            textViewType.setText(rbCell.getText());
+                        }
+                    }
+                };
+        Button save = (Button) findViewById(R.id.button);
+        save.setOnClickListener(myOnClickListener);
     }
 
     @Override
